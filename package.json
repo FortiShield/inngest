@@ -16,7 +16,10 @@
     "@changesets/changelog-github": "^0.4.8",
     "@changesets/cli": "^2.26.2",
     "cross-env": "^7.0.3",
-    "vitest": "^3.2.4"
+    "husky": "^9.1.7",
+    "vitest": "^3.2.4",
+    "@typescript-eslint/eslint-plugin": "^8.15.0",
+    "@typescript-eslint/parser": "^8.15.0"
   },
   "pnpm": {
     "overrides": {
