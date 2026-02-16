@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Disable scrollbar for webkit browsers */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus visible styles */
+:focus-visible {
+  outline: 2px solid rgb(var(--color-primary-intense));
+  outline-offset: 2px;
+}
+
+/* Monaco editor scrollbar customization */
+.monaco-editor .overflow-guard {
+  @apply rounded-b-lg;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(var(--color-background-canvas-subtle));
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--color-border-muted));
+  @apply rounded-md;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--color-border-subtle));
+}
