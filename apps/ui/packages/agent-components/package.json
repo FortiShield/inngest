@@ -1,0 +1,49 @@
+{
+  "name": "@inngest/agent-components",
+  "version": "0.1.0",
+  "description": "Shared agent collaboration components for Inngest",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./prompt": "./src/prompt/index.ts",
+    "./context": "./src/context/index.ts",
+    "./editor": "./src/editor/index.ts",
+    "./review": "./src/review/index.ts",
+    "./orchestration": "./src/orchestration/index.ts",
+    "./hooks": "./src/hooks/index.ts",
+    "./types": "./src/types/index.ts",
+    "./*": {
+      "types": "./src/**/index.d.ts",
+      "default": "./src/**/index.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json",
+    "dev": "tsc --project tsconfig.json --watch",
+    "lint": "eslint src",
+    "type-check": "tsc --noEmit",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@inngest/components": "workspace:*",
+    "@radix-ui/react-dialog": "^1.1.1",
+    "@radix-ui/react-scroll-area": "^1.1.0",
+    "@radix-ui/react-tabs": "^1.1.0",
+    "@radix-ui/react-tooltip": "^1.1.1",
+    "date-fns": "^3.0.0",
+    "lucide-react": "^0.263.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "zustand": "^4.4.7"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "typescript": "^5.7.2"
+  }
+}
