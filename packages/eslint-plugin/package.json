@@ -10,8 +10,7 @@
     "build": "tsc",
     "postversion": "pnpm run build",
     "test": "jest --silent --ci",
-    "release": "node ../../scripts/release/publish.js",
-    "log": "node ./test.js"
+    "release": "node ../../scripts/release/publish.js"
   },
   "files": [
     "dist"
