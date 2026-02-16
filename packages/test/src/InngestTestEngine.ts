@@ -385,6 +385,9 @@ export class InngestTestEngine {
       [StepOpCode.Step]: () => ({ ...baseRet, result: step.data }),
       [StepOpCode.AiGateway]: () => baseRet,
       [StepOpCode.Gateway]: () => baseRet,
+      [StepOpCode.StepFailed]: () => ({ ...baseRet, error: step.error }),
+      [StepOpCode.RunComplete]: () => baseRet,
+      [StepOpCode.DiscoveryRequest]: () => {},
     };
 
     const result = opHandlers[step.op]();
@@ -623,6 +626,7 @@ export class InngestTestEngine {
         headers: {},
         stepCompletionOrder: steps.map((step) => step.id),
         stepState: mockStepState,
+        stepMode: "single",
         disableImmediateExecution: Boolean(options.disableImmediateExecution),
         isFailureHandler: false, // TODO need to allow hitting an `onFailure` handler - not dynamically, but choosing it
         timer: new ServerTiming.ServerTiming(),

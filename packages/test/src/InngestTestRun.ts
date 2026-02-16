@@ -171,6 +171,10 @@ export class InngestTestRun {
 
           processChain();
         },
+        "change-mode": () => {
+          // Continue processing after mode change
+          processChain();
+        },
       };
 
       resultHandlers[exec.result.type]();
