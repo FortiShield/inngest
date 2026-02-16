@@ -42,7 +42,7 @@ export const realtimeMiddleware = () => {
                 // This could be a couple of different versions, but is now
                 // stable in the latter format.
                 const isExecutingStep =
-                  store.executingStep ||
+                  (store as any).executingStep ||
                   // biome-ignore lint/suspicious/noExplicitAny: Testing across version boundaries
                   (store as any).execution?.executingStep;
 
